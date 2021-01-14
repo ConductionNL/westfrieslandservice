@@ -1,18 +1,9 @@
 <?php
+
 namespace App\Service;
 
 use App\Entity\RequestConversion;
 use Conduction\CommonGroundBundle\Service\CommonGroundService;
-use DateTime;
-use Jose\Component\Core\AlgorithmManager;
-use Jose\Component\Core\JWK;
-use Jose\Component\KeyManagement\JWKFactory;
-use Jose\Component\KeyManagement\KeyConverter\RSAKey;
-use Jose\Component\Signature\Algorithm\HS256;
-use Jose\Component\Signature\JWSBuilder;
-use Jose\Component\Signature\Serializer\CompactSerializer;
-use Jose\Easy\Build;
-use Jose\Easy\JWT;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
@@ -20,7 +11,9 @@ class ConversionService
 {
     private $commonGroundService;
     private $params;
-    public function __construct(CommonGroundService $commonGroundService, ParameterBagInterface $params){
+
+    public function __construct(CommonGroundService $commonGroundService, ParameterBagInterface $params)
+    {
         $this->commonGroundService = $commonGroundService;
         $this->params = $params;
     }
@@ -33,7 +26,6 @@ class ConversionService
             $requestData['organization'] = $requestData['properties']['gemeente'];
         }
 
-
         try {
             unset($requestData['submitters']);
             unset($requestData['roles']);
@@ -42,7 +34,6 @@ class ConversionService
 
             $request->setStatus('OK');
             $request->setMessage('Verzoek omgezet naar de juiste gemeente');
-
 
             $token = [];
             $token['name'] = 'Gemeente';
@@ -63,6 +54,7 @@ class ConversionService
         $token = $this->commonGroundService->createResource($token, ['component' => 'trc', 'type' => 'tokens']);
 
         $request->setResult($token['@id']);
+
         return $request;
     }
 }
