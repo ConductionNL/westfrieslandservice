@@ -4,20 +4,20 @@
 
 settings:
   registryBase: docker.io/conduction
-  projectName: pc
-  name: pc
-  title: Proto component commonground
-  version: V1.0
-  majorVersion: v1
+  projectName: wfs
+  name: wfs
+  title: Westfriesland Service
+  version: V.0.1
+  majorVersion: 
   id: 
   description: '&#039;Naast deze JSON rest API is er ook een [graphql](/graphql) interface beschikbaar.&#039;'
   type: component
   repro: https://github.com/ConductionNL/proto-component
-  demo: pc.zaakonline.nl
-  container: https://hub.docker.com/repository/docker/conduction/pc-php
-  domain: conduction.nl
-  subdomain: pc
-  subpath: pc
+  demo: wfs.zaakonline.nl
+  container: https://hub.docker.com/repository/docker/conduction/wfs-php
+  domain: westfriesland.commonground.nu
+  subdomain: wfs
+  subpath: wfs
   subpathRouting: true
   organisationName: Conduction
   email: info@conduction.nl
