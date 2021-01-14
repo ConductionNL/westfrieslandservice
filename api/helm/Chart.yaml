@@ -5,3 +5,8 @@ name: wfs
 version: 0.1.0
 home: wfs.zaakonline.nl
 icon: wfs.zaakonline.nl
+dependencies:
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.1.1
+      condition: postgresql.enabled

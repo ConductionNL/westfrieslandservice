@@ -1,16 +1,50 @@
 apiVersion: v1
 entries:
+  postgresql:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 11.10.0
+    created: "2021-01-14T11:09:15.6405365Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 1.x.x
+    description: Chart for PostgreSQL, an object-relational database management system
+      (ORDBMS) with an emphasis on extensibility and on standards-compliance.
+    digest: eebe8f456cf98d5927a35666d1d899174dc4d3e09f26788033f761527bc90749
+    home: https://github.com/bitnami/charts/tree/master/bitnami/postgresql
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-110x117.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    - email: cedric@desaintmartin.fr
+      name: desaintmartin
+    name: postgresql
+    sources:
+    - https://github.com/bitnami/bitnami-docker-postgresql
+    - https://www.postgresql.org/
+    urls:
+    - charts/postgresql-10.1.1.tgz
+    version: 10.1.1
   wfs:
   - apiVersion: v1
     appVersion: V.0.1
-    created: "2020-08-14T11:43:24.9931003Z"
+    created: "2021-01-14T11:09:15.6277253Z"
     description: '&#039;Naast deze JSON rest API is er ook een [graphql](/graphql)
       interface beschikbaar.&#039;'
-    digest: ac5cf3421d4acbeb0c5de425902b800c20f8a190d71f9ffbb7ab644bfca58fc3
+    digest: 75886f1d42933be908a86ec8f960c0b97d8fa169642f5df82c8a5f39267df86c
     home: wfs.zaakonline.nl
     icon: wfs.zaakonline.nl
     name: wfs
     urls:
     - wfs-0.1.0.tgz
     version: 0.1.0
-generated: "2020-08-14T11:43:24.9824516Z"
+generated: "2021-01-14T11:09:15.6096191Z"
